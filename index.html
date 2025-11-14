@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Car Gallery — Fixed Images</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* CSS for the introduction paragraph */
+    .introduction {
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      line-height: 1.6;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px; /* Added space below gallery */
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .card button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+
+    .card button:hover { background: #555; }
+
+    /* NEW CSS FOR CAR DETAILS TABLE */
+    .details-section h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .car-details {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .car-details th, .car-details td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .car-details th {
+      background-color: #333;
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+
+    .car-details tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .car-details tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Car Gallery</h1>
+
+  <p class="introduction">
+    Welcome to **Amazing Autos**, your best place to see cool cars! 
+    We love all kinds of vehicles, from fast sports cars to classic models. 
+    Look at our gallery to see some beautiful photos of cars from around the world. 
+    We work hard to find the best cars for you.
+  </p>
+  <div class="gallery">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=60"
+           alt="Sportscar 1">
+      <button onclick="changeColor(this)">Change Color</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=60"
+           alt="Sports car (random)">
+      <button onclick="changeColor(this)">Change Color</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=60"
+           alt="Sportscar 3">
+      <button onclick="changeColor(this)">Change Color</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=60"
+           alt="Classic car (random)">
+      <button onclick="changeColor(this)">Change Color</button>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h2>Featured Vehicle Specifications 🏎️</h2>
+    <table class="car-details">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Engine</th>
+          <th>Top Speed</th>
+          <th>Price (Est.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Modern Roadster</td>
+          <td>V8 Twin-Turbo</td>
+          <td>205 mph</td>
+          <td>$185,000</td>
+        </tr>
+        <tr>
+          <td>Luxury GT Coupe</td>
+          <td>V12 Naturally Aspirated</td>
+          <td>192 mph</td>
+          <td>$250,000</td>
+        </tr>
+        <tr>
+          <td>Track Special</td>
+          <td>Inline-6 Turbo</td>
+          <td>180 mph</td>
+          <td>$95,000</td>
+        </tr>
+        <tr>
+          <td>Classic Cruiser '67</td>
+          <td>V8 Big Block</td>
+          <td>120 mph</td>
+          <td>$75,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function changeColor(button) {
+      const card = button.parentElement;
+      const colors = ["#ffe0e0", "#e0ffe0", "#e0e8ff", "#fff0cc", "#f2e0ff"];
+      const idx = Math.floor(Math.random() * colors.length);
+      card.style.background = colors[idx];
+    }
+  </script>
+</body>
+</html>
